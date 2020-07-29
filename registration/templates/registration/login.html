@@ -2,34 +2,67 @@
 {% load static %}
 {% block title %}Iniciar sesión{% endblock %}
 {% block content %}
-<style>.errorlist{color:red;}</style>
-<main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto mb-5">
-        {% if 'register' in request.GET %}
-          <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
-        {% endif %}
-        <form action="" method="post">{% csrf_token %}
-          <h3 class="mb-4">Iniciar sesión</h3>
-          {% if form.non_field_errors %}
-            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
-          {% endif %}
-          <p>
-            <input type="text" name="username" autofocus maxlength="254" required
-              id="id_username" class="form-control" placeholder="Nombre de usuario"/>
-          </p>
-          <p>
-            <input type="password" name="password" required
-              id="id_password" class="form-control" placeholder="Contraseña"/>
-          </p>
-          <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
-        </form>
-        <p>
-          ¿Ha olvidado su clave? Puede restaurarla <a href="{% url 'password_reset' %}">aquí</a>.
-        </p>
-      </div>
+
+<link href="{% static 'core/css/login.css' %}" rel="stylesheet">
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <div class="row"> <img src="https://i.imgur.com/CXQmsmF.png" class="logo"> </div>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="row mb-4 px-3">
+                        <h6 class="mb-0 mr-4 mt-2">Siguenos en</h6>
+                        <div class="facebook text-center mr-3">
+                            <div class="fa fa-facebook"></div>
+                        </div>
+                        <div class="twitter text-center mr-3">
+                            <div class="fa fa-github"></div>
+                        </div>
+                        <div class="linkedin text-center mr-3">
+                            <div class="fa fa-linkedin"></div>
+                        </div>
+                    </div>
+                    <div class="row px-3 mb-4">
+                        <div class="line"></div> <small class="or text-center">Or</small>
+                        <div class="line"></div>
+                    </div>
+                    {% if 'register' in request.GET %}
+                      <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
+                    {% endif %}
+                    <form action="" method="post">{% csrf_token %}
+                    <div class="row px-3"> <label class="mb-1">
+                    {% if form.non_field_errors %}
+                      <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+                    {% endif %}
+                            <h6 class="mb-0 text-sm">Nombre de usuario</h6>
+                            </label> <input class="mb-4" type="text" autofocus maxlength="254" required name="username" id="id_username"  placeholder="Nombre de usuario">
+                             </div>
+                    <div class="row px-3"> <label class="mb-1">
+                            <h6 class="mb-0 text-sm">Contraseña</h6>
+                            </label> <input type="password" name="password" id="id_password" placeholder="Contraseña"> 
+                            </div>
+                    <div class="row px-3 mb-4">
+                    <div class="row mb-3 px-3">
+                      <input type="submit" class="btn btn-blue text-center" value="Acceder">
+                     </div>
+                     </form>
+                        <a href="{% url 'password_reset' %}" class="ml-auto mb-0 text-sm">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <div class="row mb-4 px-3"> <small class="font-weight-bold">¿No tienes cuenta? <a href="{% url 'signup' %}" class="text-danger">Registrate aquí</a></small> </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue py-4">
+            <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2020 · NeoKingdom (Desarrollo de software) </small>
+                <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-github mr-4 mr-sm-5 text-sm"></span> </div>
+            </div>
+        </div>
     </div>
-  </div>
-</main>
+</div>
 {% endblock %}
