@@ -19,6 +19,7 @@ from pages.urls import pages_patterns
 from django.conf import settings 
 from profiles.urls import profiles_patterns
 from messenger.urls import messenger_patterns
+from about.urls import about_patterns
 
 urlpatterns = [
     path('', include('core.urls')),
@@ -31,6 +32,8 @@ urlpatterns = [
     path('profiles/', include(profiles_patterns)),
     # Paths de messenger
     path('messenger/', include(messenger_patterns)),
+    # Paths de about
+    path('about/', include(about_patterns))
 
 ]
 
