@@ -27,15 +27,24 @@
           </button>
           <div class="collapse navbar-collapse" id="ned">
             <ul class="navbar-nav mr-auto">
+            {% if not request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info-circle" aria-hidden="true"></i> Nosotros</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'profiles:list' %}"><i class="fa fa-users" aria-hidden="true"></i> Perfiles</a>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info-circle" aria-hidden="true"></i> Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profiles:list' %}"><i class="fa fa-users" aria-hidden="true"></i> Trabajadores</a>
+              </li>
+            {% endif %}
             </ul>
             <ul class="navbar-nav">
               {% if not request.user.is_authenticated %}
