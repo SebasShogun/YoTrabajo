@@ -28,32 +28,32 @@
           <div class="collapse navbar-collapse" id="ned">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">Nosotros</a>
+                <a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info-circle" aria-hidden="true"></i> Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'profiles:list' %}">Perfiles</a>
+                <a class="nav-link" href="{% url 'profiles:list' %}"><i class="fa fa-users" aria-hidden="true"></i> Perfiles</a>
               </li>
             </ul>
             <ul class="navbar-nav">
               {% if not request.user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline-light ml-3" href="{% url 'login' %}">Acceder</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Acceder</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline-light ml-3" href="{% url 'signup' %}">Registro</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'signup' %}"><i class="fa fa-address-card-o" aria-hidden="true"></i> Registro</a>
                 </li>
               {% else %}
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline-light ml-3" href="{% url 'messenger:list' %}">Mensajes</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'messenger:list' %}">Mensajes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline-light ml-3" href="{% url 'profile' %}">Perfil</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'profile' %}">Perfil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline-light ml-3" href="{% url 'logout' %}">Salir</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'logout' %}">Salir</a>
                 </li>
               {% endif %}
             </ul>
