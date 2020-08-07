@@ -56,13 +56,13 @@
                 </li>
               {% else %}
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'messenger:list' %}">Mensajes</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'messenger:list' %}"><i class="fa fa-comments" aria-hidden="true"></i> Mensajes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'profile' %}">Perfil</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'profile' %}"><i class="fa fa-user-circle" aria-hidden="true"></i> Perfil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'logout' %}">Salir</a>
+                  <a class="nav-link btn btn-sm btn-outline ml-3" href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesión</a>
                 </li>
               {% endif %}
             </ul>
