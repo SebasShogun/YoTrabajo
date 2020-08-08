@@ -2,7 +2,8 @@
 {% load static %}
 {% block title %}Inicio{% endblock %}
 {% block content %}
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <style>
 #hero {
   width: 100%;
@@ -152,6 +153,7 @@
 }
 </style>
 
+
   <section id="hero">
     <div class="hero-container">
       <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -207,5 +209,41 @@
       </div>
     </div>
   </section><!-- End Hero -->
+
+  <div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Accebilidad</h3><br>
+    <img src="/static/core/img/customer.png" class="img-fluid img-sm" style="width:50%"><br><br>
+  <p>Dentro del portal podrás encontrar<br>
+  fácilmente a trabajadores para tareas <br>
+  específicas para dentro o fuera del hogar <br>
+  <p>Registrate de forma gratuita</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Trabajadores</h3><br>
+    <img src="/static/core/img/worker.png" class="img-fluid img-sm" style="width:50%"><br><br>
+  <p>Contrata a personas capacitadas<br>
+  con un mayor rango de personal a disposición  <br>
+  dentro de nuestro portal <br>
+  <p>Registrate para contactar</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>¿Quieres ser parte de YoTrabajo?</h3><br>
+    <img src="/static/core/img/research.png" class="img-fluid img-sm" style="width:50%"><br><br>
+  <p>Publicita tu trabajo individual<br>
+  consigue más clientes de lo habitual <br>
+  Se parte de nuestra comunidad<br>
+  <p>Contacta a yotrabajo@yotrabajo.com</p>
+  </div>
+  </div>
+</div>
+</div>
 
 {% endblock %}
