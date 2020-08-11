@@ -15,7 +15,7 @@
         <div class="row">
           {% if not request.user.is_staff %}
           {% for profile in profile_list %}
-          {% if profile.ocupation != '' %}
+          {% if profile.ocupation != '' and  profile.ocupation != null %}
             <div class="col-md-4 mt-2 mb-3 ">
               <div class="row p-1">
                 <div class="col-md-12">
