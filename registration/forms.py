@@ -24,7 +24,7 @@ class ProfileForm(forms.ModelForm):
             'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file mt-3'}),
             'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':3, 'placeholder':'Biografía'}),
             'link': forms.URLInput(attrs={'class':'form-control mt-3', 'placeholder':'Enlace'}),
-            'ocupation': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Escribe tu ocupación'}),
+            'ocupation': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Escribe tu ocupación', 'disabled':'true'}),
         }
 
 class EmailForm(forms.ModelForm):

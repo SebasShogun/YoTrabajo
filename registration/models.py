@@ -12,7 +12,10 @@ def custom_upload_to(instance, filename):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to=custom_upload_to, null=True, blank=True)
+<<<<<<< HEAD
     ocupation = models.TextField(null=True)
+=======
+>>>>>>> c877ef69ab4afd6677bf52f74bd8a70318b9894e
     bio = models.TextField(null=True, blank=True)
     link = models.URLField(max_length=200, null=True, blank=True)
 
