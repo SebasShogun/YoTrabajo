@@ -23,7 +23,9 @@
               <h3>Perfil</h3>
               <input type="file" name="avatar" class="form-control-file mt-3" id="id_avatar">
               {{ form.bio }}
+              {% if request.user.is_staff %}
               {{ form.ocupation }}
+              {% endif%}
               {{ form.link }}
               <input type="email" value="{{request.user.email}}" class="form-control mt-3" readonly>
               <p class="mt-3">
